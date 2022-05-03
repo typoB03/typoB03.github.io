@@ -1,0 +1,41 @@
+body{
+  background-color: #F3D792;
+  display: flex;
+  adjust-content: middle;
+  margin:0;
+}
+
+.logo{
+  width:50%;
+  margin-bottom: 10px;
+}
+
+.mainContainer{
+  text-align:center;
+  background-color: white;
+  margin:auto;
+  padding: 5vh;
+  font-size: 2vh;
+  font-family: 'Russo One', sans-serif;
+  width:40vh;
+}
+
+.temp-button{
+  height: 46px;
+  width: 120px;
+  background-color: #fff3c9;
+  border: solid 2px #4a472a;
+  font-family: 'Russo One', sans-serif;
+}
+
+.temp-button:hover{
+  background-color: #aba27e;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  .mainContainer{
+    width: 70vw;
+    padding: 10vw;
+  }
+}

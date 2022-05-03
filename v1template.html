@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Young And Beauty Spa</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chango&display=swap" rel="stylesheet">
+    <script>window.Mangomint = window.Mangomint || {}; window.Mangomint.CompanyId = 206933;</script>
+    <script src="https://booking.mangomint.com/app.js" async></script>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="headerSection">
+        <div class="logo">
+          <img class="logoImg" src="images/logo.png"/>
+        </div>
+        <div class="navMenu">
+          <a class="menuItem active" href="./temp.html">Home</a>
+          <div onmouseover="dropDownShow('drop1');" onmouseout="dropDownHide('drop1')">
+            <a class="menuItem" class="dropbtn">Services</a>
+            <div class="dropdown-content" id="drop1">
+              <a href="./services/facials.html">Facials</a>
+              <a href="./services/waxing.html">Waxing</a>
+              <a href="./services/nails.html">Nails</a>
+              <a href="./services/specialtreatment.html">Special Treatments</a>
+              <a href="./services/customtreatment.html">Customized Treatments Combo</a>
+              <a href="./services/foresttreatment.html">Forest Treatments</a>
+            </div>
+          </div>
+          <a class="menuItem" href="./booking.html">Booking</a>
+          <a class="menuItem" href="./contact.html">Contact Us</a>
+          <a class="menuItem" href="./about.html">About Us</a>
+        </div>
+        <div class="socialTab">
+        </div>
+      </div>
+      <div class="mainSection">
+        <div class="socialMedia">
+          <a><img class="socialIcon" src="images/instaIcon.png"></a>
+          <a><img class="socialIcon" src="images/faceIcon.png"></a>
+          <a><img class="socialIcon" src="images/twitterIcon.png"></a>
+        </div>
+        <div class="servicesContainer">
+          <p style="margin:5vh 0; font-size:3.5vh;">Services</p>
+          <a href="./services/facials.html">Facials</a>
+          <a href="./services/waxing.html">Waxing</a>
+          <a href="./services/nails.html">Nails</a>
+          <a href="./services/specialtreatment.html">Special Treatments</a>
+          <a href="./services/customtreatment.html">Customized Treatments Combo</a>
+          <a href="./services/foresttreatment.html">Forest Treatments</a>
+        </div>
+      </div>
+      <div class="footerSection">
+        <p>youngandbeautyspa@gmail.com</p>
+        <p>234 Address St City, New York 11111</p>
+      </div>
+    </div>
+
+    <div class="emailRegistry" id="emailReg">
+      <div class="emailOverlay">
+      </div>
+      <div class="emailModal">
+        <p class="closeModal" onclick="hideModal('emailReg');">X</p>
+        <p class="emailText">
+          Please Enter Your Email Address To Receive Our Promotions!
+        </p>
+        <input type="email" id="email" class="emailInput"
+          pattern=".+@globex\.com" size="30" required />
+        <button class="submitBtn" onclick="hideModal('emailReg');">SUBMIT</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const dropDownShow = (target) => {
+       document.getElementById(target).style.display = "flex";
+    }
+
+    const dropDownHide = (target) => {
+       document.getElementById(target).style.display = "none";
+    }
+
+    const hideModal = (target) => {
+       document.getElementById(target).style.display = "none";
+    }
+  </script>
+</html>

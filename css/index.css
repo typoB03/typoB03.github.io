@@ -1,0 +1,327 @@
+body{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.mainContainer{
+  width: 100%;
+  height: 100%;
+  background-color: #383838;
+  font-family: 'Philosopher';
+  color: white;
+}
+
+.headerSection{
+  width: 100%;
+  height: 15%;
+  background-color: #383838;
+  box-shadow: 0 3px 3px -3px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.footerSection{
+  width: 100%;
+  height: 100px;
+  background-color: #383838;
+  box-shadow: 0 -3px 3px -3px black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Philosopher';
+}
+
+.mainSection{
+  height: 85%;
+  position: relative;
+}
+
+.contentSection{
+  background-color: #383838;
+  text-align: center;
+}
+
+.titleContent{
+  padding-top: 50px;
+}
+
+.titleElemHeader{
+  font-size: 20px;
+}
+
+.carouselContainer{
+  height: 100%;
+  width: 100%;
+}
+
+.logo{
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 5vw;
+  height: 100%;
+  position: absolute;
+  left: 2%;
+}
+
+.logoImg{
+  height:80%;
+}
+
+.socialMedia{
+  width:fit-content;
+  position: absolute;
+  bottom: 3%;
+  left: 5%;
+  z-index: 100;
+}
+
+.socialIcon{
+  height:40px;
+  padding:5px;
+  filter: invert(1);
+}
+
+.navMenu {
+  overflow: hidden;
+  display: inline-block;
+  float: right;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 5%;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  top: 17vh;
+  width: 18vh;
+  background-color: #fff9eb;
+  text-align: center;
+}
+
+.dropdown-content a{
+  color: #034b8f;
+  text-align: center;
+  text-decoration: none;
+  padding: 2vh 1vh;
+  font-size: 1.8vh;
+  font-family: 'Philosopher';
+}
+
+.dropdown-content a:hover{
+  color: #8a7319;
+}
+
+.menuItem {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 2vh 4vh;
+  text-decoration: none;
+  font-size: 1.8vh;
+  font-family: 'Philosopher';
+}
+
+.menuItem:hover {
+  color: #8a7319;
+}
+
+.servicesContainer{
+  width: 70%;
+  margin: 2% auto;
+  background-color: #FFF1DC;
+  font-family: 'Philosopher';
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 0 15vh 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.servicesContainer a{
+  text-decoration: none;
+  text-align: middle;
+  font-size: 3vh;
+}
+
+.carouselImg{
+  margin: auto;
+  height:20vh;
+}
+
+.emailRegistry{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.emailOverlay{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.carousel{
+  height: 100%;
+}
+
+.carousel-inner{
+  height: 100%;
+}
+
+.book-button{
+  border: 0;
+  background-color: white;
+  color: #383838;
+  height: 40px;
+  width: 110px;
+}
+
+.main-overlay{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+}
+
+.overlay-text-1{
+  width: 40%;
+  position: absolute;
+  font-size: 30px;
+  top: 5%;
+  left: 5%;
+  color: white;
+}
+
+.overlay-text-2{
+  width: 40%;
+  position: absolute;
+  font-size: 30px;
+  right: 5%;
+  bottom: 5%;
+  text-align: right;
+  color: white;
+}
+
+.carouselContainer{
+  z-index: 99;
+  position: relative;
+}
+
+.carousel-control{
+  z-index: 10000;
+}
+
+.carousel-inner > .item > img{
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-inner > .item {
+  height: 100%;
+  width: 100%;
+}
+
+.center-book-now{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 400px;
+  margin: 0 20px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-front img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flip-card-front-title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+}
+
+.service-cards{
+  width: 100%;
+  padding: 50px;
+  background-color: #383838;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fader{
+  transition: opacity 0.7s ease-in;
+}
+
+.fadeOut { opacity: 0; }
+.fadeIn { opacity: 1; }
