@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/typoB03.github.io/static/css/main.42efabd2.css",
-    "main.js": "/typoB03.github.io/static/js/main.70952478.js",
-    "index.html": "/typoB03.github.io/index.html",
-    "main.42efabd2.css.map": "/typoB03.github.io/static/css/main.42efabd2.css.map",
-    "main.70952478.js.map": "/typoB03.github.io/static/js/main.70952478.js.map"
+    "main.css": "/static/css/main.42efabd2.css",
+    "main.js": "/static/js/main.70952478.js",
+    "index.html": "/index.html",
+    "main.42efabd2.css.map": "/static/css/main.42efabd2.css.map",
+    "main.70952478.js.map": "/static/js/main.70952478.js.map"
   },
   "entrypoints": [
     "static/css/main.42efabd2.css",
