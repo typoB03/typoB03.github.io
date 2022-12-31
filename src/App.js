@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import ThreeBackground from "./ThreeBackground";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [loadMusic, setLoadMusic] = useState(false);
+
+    return (
+        <div className="app-container">
+            {loadMusic ? (
+                <ThreeBackground />
+            ) : (
+                <div className="load-button-container">
+                    <a className="load-button" onClick={() => setLoadMusic(!loadMusic)}>
+                        LOAD
+                    </a>
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default App;
