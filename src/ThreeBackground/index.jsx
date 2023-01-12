@@ -3,8 +3,9 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { createNoise3D } from "simplex-noise";
+import './styles.css';
 
-const ThreeBackground = () => {
+const ThreeBackground = ({ musicSrc, visualColor, coverImg, isWireframe, setLoadMusic }) => {
     const noise = createNoise3D();
 
     let audioSource;
@@ -12,13 +13,11 @@ const ThreeBackground = () => {
     let dataArray;
     let musicCube;
 
-    const img = '/albums/shenghuo.jpg';
-
     useEffect(() => {
         //getting audio context
         if (!audioSource) {
             const audio = document.getElementById("music-audio");
-            audio.src = "/music/freestyle.wav";
+            audio.src = musicSrc;
             audio.load();
             audio.play();
             const context = new AudioContext();
@@ -65,38 +64,45 @@ const ThreeBackground = () => {
         // });
 
         const loader = new THREE.TextureLoader();
-        const texture = loader.load(img);
+        const texture = loader.load(coverImg);
 
-        const albumGeometry = new THREE.BoxGeometry(20,20,1); // ensure correct aspect ratio
+        const albumGeometry = new THREE.BoxGeometry(20, 20, 1); // ensure correct aspect ratio
         const albumMaterial = [
             new THREE.MeshBasicMaterial({
-                color: 'gray' //left
+                color: "gray", //left
             }),
             new THREE.MeshBasicMaterial({
-                color: 'gray' //right
+                color: "gray", //right
             }),
             new THREE.MeshBasicMaterial({
-                color: 'gray' // top
+                color: "gray", // top
             }),
             new THREE.MeshBasicMaterial({
-                color: 'gray' // bottom
+                color: "gray", // bottom
             }),
             new THREE.MeshBasicMaterial({
-                map: texture // front
+                map: texture, // front
             }),
             new THREE.MeshBasicMaterial({
-                color: 'gray' //back
-            })
+                color: "gray", //back
+            }),
         ];
 
         const albumPlane = new THREE.Mesh(albumGeometry, albumMaterial);
         scene.add(albumPlane);
 
-        const musicGeometry = new THREE.TorusKnotGeometry( 20, 1.98, 200, 13, 2, 3 );
+        const musicGeometry = new THREE.TorusKnotGeometry(
+            20,
+            1.98,
+            200,
+            13,
+            2,
+            3
+        );
 
         const musicMaterial = new THREE.MeshLambertMaterial({
-            color: 0xffffff,
-            wireframe: true,
+            color: visualColor,
+            wireframe: isWireframe,
         });
 
         musicCube = new THREE.Mesh(musicGeometry, musicMaterial);
@@ -135,11 +141,7 @@ const ThreeBackground = () => {
                 const modA = modulate(Math.pow(lowerMaxFr, 0.8), 0, 1, 0, 5);
                 const modB = modulate(upperAvgFr, 0, 1, 0, 4);
 
-                makeRoughBall(
-                    musicCube,
-                    4,
-                    modB
-                );
+                makeRoughBall(musicCube, modA, modB);
             }
 
             controller.update();
@@ -176,37 +178,8 @@ const ThreeBackground = () => {
             position.needsUpdate = true;
         }
 
-        mesh.geometry.verticesNeedUpdate = true;
-        mesh.geometry.normalsNeedUpdate = true;
-        mesh.updateMatrixWorld();
-    };
-
-    const makeRing = (mesh, bassFr, treFr) => {
-        let position = mesh.geometry.attributes.position;
-        const vertex = new THREE.Vector3();
-
-        for (let i = 0, l = position.count; i < l; i++) {
-            vertex.fromBufferAttribute(position, i);
-            vertex.applyMatrix4(mesh.matrixWorld);
-            var offset = mesh.geometry.parameters.radius;
-            var amp = 2;
-            var time = window.performance.now();
-            vertex.normalize();
-            var rf = 0.00001;
-            var distance =
-                offset +
-                bassFr +
-                noise(
-                    vertex.x + time * rf * 7,
-                    vertex.y + time * rf * 8,
-                    vertex.z + time * rf * 9
-                ) *
-                    amp *
-                    treFr;
-            vertex.multiplyScalar(distance);
-            position.setXYZ(i, vertex.x, vertex.y, vertex.z);
-            position.needsUpdate = true;
-        }
+        mesh.rotation.x = treFr * 0.005;
+        mesh.rotation.y = treFr * 0.005;
 
         mesh.geometry.verticesNeedUpdate = true;
         mesh.geometry.normalsNeedUpdate = true;
@@ -238,11 +211,19 @@ const ThreeBackground = () => {
 
     return (
         <div id="three-bg-container">
+            <a className="back-button" onClick={()=>setLoadMusic(null)}>
+                BACK
+            </a>
             <canvas id="three-bg-canvas" />
             <audio
                 id="music-audio"
                 controls
-                style={{ position: "absolute", bottom: "5px", left: "50%", transform:"translateX(-50%)" }}
+                style={{
+                    position: "absolute",
+                    bottom: "5px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                }}
             />
         </div>
     );
