@@ -7,6 +7,7 @@ const App = () => {
 
     const [firstHover, setFirstHover] = useState(false);
     const [secondHover, setSecondHover] = useState(false);
+    const [thirdHover, setThirdHover] = useState(false);
 
     useEffect(()=>{
         if (loadMusic) {
@@ -26,6 +27,13 @@ const App = () => {
         musicSrc: "/music/sui.wav",
         visualColor: 0xA020F0,
         coverImg: "/albums/sui.png",
+        isWireframe: true,
+    }
+
+    const jaguarBluehundo = {
+        musicSrc: "/music/jaguar-bluehundo.mp3",
+        visualColor: 0x0024F7,
+        coverImg: "/albums/blue-hundo.jpg",
         isWireframe: true,
     }
 
@@ -60,6 +68,16 @@ const App = () => {
                     </div>
                     <div className="menu-container">
                         <p className="menu-header">FEATURING</p>
+                        <a
+                            className="load-button"
+                            onClick={() => setLoadMusic(jaguarBluehundo)}
+                            onMouseEnter={()=>setThirdHover(true)}
+                            onMouseLeave={()=>setThirdHover(false)}
+                        >
+                            <img className="fire-hover-left" src="/purplefire.gif" style={{display: thirdHover ? 'block' : 'none'}}/>
+                            JaguarVVS <span style={{marginLeft: '10px', marginRight: '10px'}}>-</span> Blue Hundo
+                            <img className="fire-hover-right" src="/purplefire.gif" style={{display: thirdHover ? 'block' : 'none'}}/>
+                        </a>
                         <a
                             className="load-button"
                             onClick={() => setLoadMusic(shenghuoObject)}
