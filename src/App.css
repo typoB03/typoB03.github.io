@@ -36,15 +36,17 @@ body, html{
 .fire-hover-left{
   position: absolute;
   width: 30px;
-  top: -12px;
+  top: 50%;
   left: -35px;
+  transform: translateY(-75%);
 }
 
 .fire-hover-right{
   position: absolute;
   width: 30px;
-  top: -12px;
+  top: 50%;
   right: -35px;
+  transform: translateY(-75%);
 }
 
 .menu-header{

@@ -24,7 +24,7 @@ const App = () => {
     }
 
     const suiObject = {
-        musicSrc: "/music/sui.wav",
+        musicSrc: "/music/SUI.wav",
         visualColor: 0xA020F0,
         coverImg: "/albums/sui.png",
         isWireframe: true,
