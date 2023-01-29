@@ -113,10 +113,6 @@ const ThreeBackground = ({ musicSrc, visualColor, coverImg, isWireframe, setLoad
         ambientLight.castShadow = true;
         scene.add(ambientLight);
 
-        const spotLight = new THREE.SpotLight(0xffffff, 1);
-        spotLight.castShadow = true;
-        scene.add(spotLight);
-
         const controller = new OrbitControls(camera, renderer.domElement);
 
         const animate = () => {
