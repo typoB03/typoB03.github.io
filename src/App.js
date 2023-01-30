@@ -34,32 +34,32 @@ const App = () => {
     };
 
     const shenghuoObject = {
-        musicSrc: "https://storage.cloud.google.com/yeshengnetwork/music/ghostmg-freestyle.wav",
+        musicSrc: "https://storage.googleapis.com/yeshengnetwork/music/ghostmg-freestyle.wav",
         visualColor: 0xffffff,
-        coverImg: "https://storage.cloud.google.com/yeshengnetwork/cover/ghostmg-shenghuo.jpg",
+        coverImg: "https://storage.googleapis.com/yeshengnetwork/cover/ghostmg-shenghuo.jpg",
         isWireframe: false,
     };
 
     const suiObject = {
-        musicSrc: "https://storage.cloud.google.com/yeshengnetwork/music/ghostmg-sui.wav",
+        musicSrc: "https://storage.googleapis.com/yeshengnetwork/music/ghostmg-sui.wav",
         visualColor: 0xa020f0,
-        coverImg: "https://storage.cloud.google.com/yeshengnetwork/cover/ghostmg-sui.png",
+        coverImg: "https://storage.googleapis.com/yeshengnetwork/cover/ghostmg-sui.png",
         isWireframe: true,
     };
 
     const jaguarBluehundo = {
-        musicSrc: "https://storage.cloud.google.com/yeshengnetwork/music/jaguar-bluehundo.mp3",
+        musicSrc: "https://storage.googleapis.com/yeshengnetwork/music/jaguar-bluehundo.mp3",
         visualColor: 0x0024f7,
-        coverImg: "https://storage.cloud.google.com/yeshengnetwork/cover/jaguar-bluehundo.jpg",
+        coverImg: "https://storage.googleapis.com/yeshengnetwork/cover/jaguar-bluehundo.jpg",
         isWireframe: true,
     };
 
     const mongolRacksObject = {
         type: "doublecircle",
-        musicSrc: "https://storage.cloud.google.com/yeshengnetwork/music/shanghaiphantom-mongolracks.wav",
+        musicSrc: "https://storage.googleapis.com/yeshengnetwork/music/shanghaiphantom-mongolracks.wav",
         visualColor: 0x7cc0d8,
         secondColor: 0xf7f0dc,
-        coverImg: "https://storage.cloud.google.com/yeshengnetwork/cover/shanghaiphantom-mongolracks.jpg",
+        coverImg: "https://storage.googleapis.com/yeshengnetwork/cover/shanghaiphantom-mongolracks.jpg",
     };
 
     return (
