@@ -18,6 +18,7 @@ const ThreeBackground = ({ musicSrc, visualColor, coverImg, isWireframe, setLoad
         if (!audioSource) {
             const audio = document.getElementById("music-audio");
             audio.src = musicSrc;
+            audio.crossOrigin = "anonymous";
             audio.load();
             audio.play();
             const context = new AudioContext();
