@@ -11,16 +11,18 @@ body, html{
 .app-container{
   height: 100%;
   width: 100%;
+  background-color: black;
 }
 
 .menu-container{
-  height: 100%;
   width: 100%;
-  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: calc(10% + 130px);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .load-button{
@@ -31,6 +33,8 @@ body, html{
   font-size: 26px;
   cursor: pointer;
   position: relative;
+  text-align: center;
+  max-width: 90%;
 }
 
 .fire-hover-left{
