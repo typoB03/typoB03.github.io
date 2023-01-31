@@ -20,6 +20,7 @@ const DoubleCircle = ({ musicSrc, visualColor, secondColor, coverImg, isWirefram
             const audio = document.getElementById("music-audio");
             audio.src = musicSrc;
             audio.crossOrigin = "anonymous";
+            audio.volume = 0.6;
             audio.load();
             audio.play();
             const context = new AudioContext();
